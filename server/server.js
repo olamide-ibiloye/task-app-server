@@ -10,7 +10,9 @@ const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:3000/", "https://task-app-mmvb.onrender.com"]
+}));
 
 app.use("/api/tasks", taskRoute)
 
